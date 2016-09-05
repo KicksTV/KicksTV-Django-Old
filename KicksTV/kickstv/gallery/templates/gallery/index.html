@@ -1,0 +1,36 @@
+{% extends 'kickstv/base.html' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+		<div class="col-md-1 col-md-offset-11">
+			<a href="{% url 'gallery-add' %}" class="btn btn-primary">
+				<span class="glyphicon glyphicon-plus"></span>
+				Add Gallery
+			</a>
+		</div>
+			{% for gallery in all_gallerys %}
+				<div class="col-xs-4 col-sm-4 col-md-4 gallery-container">
+					<div class="thumbnail">
+						<img width="300px" height="300px" src="{{ gallery.gallery_image.url }}">
+						<div class="caption">
+							<h3 class=""><a href="{% url 'detail' gallery.id %}">{{ gallery.gallery_title }}</a></h3>
+							<p>{{ gallery.gallery_date }}</p>
+							
+							<form action="{% url 'gallery-delete' gallery.id %}" method="post" style="display:inline;">
+								{% csrf_token %}
+								<input type="hidden" name="gallery.id" value="{{ gallery.id }}">
+								<button type="submit" class="btn btn-danger btn-sm">
+									<span class="glyphicon glyphicon-trash"></span>
+								</button>
+							</form>
+							<a class="btn btn-default btn-sm" href="{% url 'gallery-update' gallery.id %}">
+								<span class="glyphicon glyphicon-pencil"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

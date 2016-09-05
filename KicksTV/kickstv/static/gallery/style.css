@@ -1,0 +1,85 @@
+body {
+	background: white url("images/background.jpg") no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* Navbar styles */
+
+.navbar {
+	border-radius: 0px;
+}
+.navbar-inverse .navbar-brand {
+	color: white;
+}
+
+/* Navbar header */ 
+
+.navbar-header {
+	height: 70px;
+	padding: 0 20px 0 10px;
+	width: auto;
+}
+.navbar-brand {
+	font-family: 'Satisfy', 'arial';
+	color: white;
+	font-size: 25px;
+	padding: 0;
+	line-height: 70px;
+}
+.navbar>.container-fluid .navbar-brand {
+	margin-left: 0;
+}
+
+/* Navbar items */
+
+.navbar-nav {
+	height: 70px;
+}
+.navbar-nav>li {
+
+}
+.navbar-nav>li>a {
+	padding: 0px 15px 0 15px;
+	margin: 0;
+	line-height: 70px;
+	font-size: 17px;
+}
+
+
+
+
+
+/* Homepage styles */
+
+.homepage-image {
+	width: 100%;
+	margin-top: -20px;
+	opacity: 0.8;
+	position: fixed;
+}
+
+/* Gallerypage */
+.gallery-container {
+	padding-top: 15px;
+}
+
+
+
+
+
+/* Detailspage */
+
+.details-container {
+	padding: 0 10px 0 20px;
+	margin-right: 0;
+	width: 100%;
+}
+.image-container {
+
+}
+.AddNewImage-container {
+	padding-bottom: 10px;
+}

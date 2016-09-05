@@ -1,0 +1,42 @@
+{% extends 'kickstv/base.html' %}
+
+
+{% block body %}
+	<!-- Gallery Container-->
+	<div class="container details-container">
+		<div class="row"> 
+			<div class="col-md-4">
+				<div class="thumbnail">
+					<img src="{{ gallery.gallery_image.url }}">
+						<div class="caption">
+							<h3>{{ gallery.gallery_title }}</h3>
+							<p>{{ gallery.gallery_date }}</p>
+							<p>{{ gallery.gallery_description }}</p>
+							<a href="{% url 'image-add' %}" class="btn btn-primary">
+							<span class="glyphicon glyphicon-plus">
+							</span>
+							Add Image
+							</a>
+						</div>
+					</div>
+				</div>
+
+
+			<!-- Image Container-->
+			<div class="image-container">
+				<div class="col-md-8 ">
+					{% for image in gallery.image_set.all %}
+						<div class="col-sm-6 col-md-3">
+							<div class="thumbnail">
+								<img width="300px" height="300px" src="{{ image.image_image.url }}">
+								<div class="caption">
+									<h3>{{ image.image_title }}</h3>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

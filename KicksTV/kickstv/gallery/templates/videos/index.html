@@ -1,0 +1,20 @@
+{% extends 'kickstv/base.html' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			{% for playlist in all_playlists %}
+				<div class=" col-xs-4 col-sm-4 col-md-4">
+					<div class="thumbnail">
+						<img width="300px" height="300px" src="{{ playlist.playlist_image }}">
+						<div class="caption">
+							<h3 class=""><a href="">{{ playlist.playlist_title }}</a></h3>
+							<p>{{ playlist.playlist_date }}</p>
+							<p>{{ playlist.playlist_description }}</p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
